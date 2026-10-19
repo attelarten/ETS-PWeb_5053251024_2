@@ -68,8 +68,9 @@ transactionForm.addEventListener("submit", function(event) {
     transactions.push(transaction);
 
     saveTransactions();
+    updateDashboardBalance();
     renderTransactions();
-    
+
     transactionForm.reset();
 });
 
@@ -124,6 +125,8 @@ function renderTransactions() {
 
         item.appendChild(details);
         item.appendChild(amount);
+
+        transactionList.appendChild(item);
     });
 }
 
@@ -134,6 +137,38 @@ function saveTransactions() {
         JSON.stringify(transactions)
     );
 }
+
+function updateDashboardBalance() {
+    let income = 0;
+    let expensePersonal = 0;
+    let expenseOperational = 0;
+
+    transactions.forEach(function(transaction) {
+        if (transaction.type === "income") {
+            income += transaction.nominal;
+        } else if (transaction.type === "expense-personal") {
+            expensePersonal += transaction.nominal;
+        } else if (transaction.type === "expense-operational") {
+            expenseOperational += transaction.nominal;
+        }
+    });
+    const cleanIncome = income - expenseOperational;
+    const balance = income - expensePersonal - expenseOperational;
+
+    document.getElementById("balance").textContent = formatRupiah(balance);
+    document.getElementById("income").textContent = formatRupiah(cleanIncome);
+    document.getElementById("expense-personal").textContent = formatRupiah(expensePersonal);
+    document.getElementById("expense-operational").textContent = formatRupiah(expenseOperational);
+}
+
+function formatRupiah(amount) {
+    return amount.toLocaleString("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        maximumFractionDigits: 0
+    });
+}
+
 
 renderTransactions();
 updateDashboardBalance();
