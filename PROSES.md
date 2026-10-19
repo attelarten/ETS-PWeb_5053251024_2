@@ -12,5 +12,5 @@ Keputusan desain yang dibuat:
 
 Perlu type pengeluaran jadi dua menjadi pengeluaran operasional dan pribadi
 
-Saat pengerjaan terdapat 2 bug, yang pertama adalah di daftar transaksi, dan penyelesaiannya adalah di script js, penggunaan nama dari AI berbeda dengan code.
+Saat pengerjaan terdapat 2 bug, yang pertama adalah di daftar transaksi, dan penyelesaiannya adalah di script js, penggunaan nama dari AI berbeda dengan code. Yang kedua adalah di script.js, tombol edit delete di css belum ditambahkan, solusinya adalah menambahkan di css.
 
