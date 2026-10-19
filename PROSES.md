@@ -2,16 +2,14 @@ Persona nomor 2 adalah Driver Ojek Online, pendapatan harian ojek online sangat 
 
 Struktur data transaksi:
 {
-  id: 50532510240001,
+  nama: "Servis Motor"
   tanggal: "2026-10-12",
   jenis: "pengeluaran",
   kategori: "operasional",
   nominal: 200000,
-  catatan: "Servis Motor"
 }
 
 Keputusan desain yang dibuat:
 
 Perlu kategori transaksi untuk membagi pengeluaran operasional dan pribadi
-Pendapatan juga bisa diberi kategori seperti: ojek online, bonus, tip, dll
 

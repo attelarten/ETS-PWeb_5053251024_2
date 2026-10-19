@@ -7,19 +7,95 @@
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
     </head>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="logo.jpg" alt="Logo MyDuit" class="logo-image">
-            </div>
 
-            <div class="navbar-menu">
-                <a class="nav-item" href="#dashboard" data-page="dashboard">Dashboard</a>
-                <a class="nav-item" href="#transactions" data-page="transactions">Transactions</a>
-            </div>
-        </nav>
-    </header>
     <body>
-        <!-- Konten halaman akan ditempatkan di sini -->
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="src/logo.jpg" alt="Logo MyDuit" class="logo-image">
+                </div>
+
+                <div class="navbar-menu">
+                    <a class="nav-item" href="#dashboard" data-page="dashboard">Dashboard</a>
+                    <a class="nav-item" href="#transactions" data-page="transactions">Transactions</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="page" id="dashboard">
+                <h1>Dashboard</h1>
+                <p>Welcome back! Here's your financial overview.</p>
+
+                <div class="summary-cards">
+                    <div class="summary-card">
+                        <p>Saldo</p>
+                        <p id="balance">--------</p>
+                    </div>
+
+                    <div class="summary-card">
+                        <p>Pendapatan Bersih</p>
+                        <p id="income">--------</p>
+                    </div>
+
+                    <div class="summary-card">
+                        <p>Pengeluaran Pribadi</p>
+                        <p id="expense-personal">--------</p>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <p>Pengeluaran Operasional</p>
+                        <p id="expense-operational">--------</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page" id="transactions" hidden>
+                <h2>Transactions</h2>
+                <p>Kelola transaksi keuanganmu di sini.</p>
+
+                <form id="transaction-form">
+
+                    <div class="form-group">
+                        <label for="nama">Nama Transaksi</label>
+                        <input 
+                            type="text"
+                            id="nama"
+                            placeholder="Contoh: Makan siang"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nominal">Jumlah (Rupiah)</label>
+                        <input
+                            type="number"
+                            id="nominal"
+                            placeholder="Contoh: 25000"
+                            min="1"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type">Jenis transaksi</label>
+                        <select id="type" required>
+                            <option value="income">Pemasukan</option>
+                            <option value="expense-personal">Pengeluaran Pribadi</option>
+                            <option value="expense-operational">Pengeluaran Operasional</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Tanggal</label>
+                        <input type="date" id="date" required>
+                    </div>
+
+                    <button type="submit">Tambah Transaksi</button>
+                </form>
+            
+                <h2>Riwayat Transaksi</h2>
+                <div id="transaction-list"></div>
+            </section>
+        </main>
     </body>
 </html>
