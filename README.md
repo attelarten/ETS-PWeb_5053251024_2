@@ -16,4 +16,3 @@ Daftar Fitur:
 7. Fitur Khas: Pendapatan bersih
 8. Fitur Bonus1: Edit transaksi
 9. Fitur Bonus2: Tampilan responsif di layar 360px
-10. Fitur Bonus3: Edit transaksi
