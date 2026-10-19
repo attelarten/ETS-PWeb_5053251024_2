@@ -8,6 +8,103 @@
         <script src="script.js" defer></script>
     </head>
 
+<!-- ========================================
+     MODAL EDIT TRANSAKSI
+======================================== -->
+
+    <div id="edit-modal" class="modal" hidden>
+        <div class="modal-content">
+            <h2>Edit Transaksi</h2>
+
+            <form id="edit-form">
+                <label for="edit-nama">Nama Transaksi</label>
+                <input
+                    type="text"
+                    id="edit-nama"
+                    placeholder="Contoh: Beli bensin"
+                    required
+                >
+
+                <label for="edit-nominal">Nominal (Rp)</label>
+                <input
+                    type="number"
+                    id="edit-nominal"
+                    min="1"
+                    step="1"
+                    placeholder="Contoh: 15000"
+                    required
+                >
+
+                <label for="edit-type">Tipe Transaksi</label>
+                <select id="edit-type" required>
+                    <option value="income">Pemasukan</option>
+                    <option value="expense-personal">
+                        Pengeluaran Pribadi
+                    </option>
+                    <option value="expense-operational">
+                        Pengeluaran Operasional
+                    </option>
+                </select>
+
+                <label for="edit-date">Tanggal</label>
+                <input
+                    type="date"
+                    id="edit-date"
+                    required
+                >
+
+                <div class="modal-actions">
+                    <button
+                        type="button"
+                        id="cancel-edit"
+                    >
+                        Batal
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="edit-button"
+                    >
+                        Simpan Perubahan
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- ========================================
+        MODAL HAPUS TRANSAKSI
+    ======================================== -->
+
+    <div id="delete-modal" class="modal" hidden>
+        <div class="modal-content">
+            <h2>Hapus Transaksi</h2>
+
+            <p>
+                Apakah Anda yakin ingin menghapus transaksi ini?
+                Tindakan ini tidak dapat dibatalkan.
+            </p>
+
+            <div class="modal-actions">
+                <button
+                    type="button"
+                    id="cancel-delete"
+                >
+                    Batal
+                </button>
+
+                <button
+                    type="button"
+                    id="confirm-delete"
+                    class="delete-button"
+                >
+                    Hapus Transaksi
+                </button>
+            </div>
+        </div>
+    </div>
+
     <body>
         <header>
             <nav class="navbar">

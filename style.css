@@ -149,15 +149,228 @@ body {
 }
 
 
-@media (max-width: 600px) {
-    #transaction-form {
-        padding: 16px;
+/* ========================================
+   OVERLAY MODAL
+======================================== */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Pastikan atribut hidden tetap berfungsi */
+.modal[hidden] {
+    display: none;
+}
+
+
+/* ========================================
+   KOTAK MODAL
+======================================== */
+
+.modal-content {
+    width: 100%;
+    max-width: 450px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    padding: 24px;
+    background: #ffffff;
+    color: #111827;
+    border-radius: 12px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Judul modal */
+.modal-content h2 {
+    margin: 0 0 20px;
+    font-size: 22px;
+}
+
+/* Paragraf modal */
+.modal-content p {
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   FORM EDIT
+======================================== */
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modal-content label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 11px;
+    margin-bottom: 8px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+
+    background: #ffffff;
+    color: #111827;
+    font: inherit;
+}
+
+.modal-content input:focus,
+.modal-content select:focus {
+    outline: 2px solid #93c5fd;
+    border-color: #3b82f6;
+}
+
+
+/* ========================================
+   TOMBOL MODAL
+======================================== */
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 16px;
+}
+
+.modal-actions button {
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 6px;
+
+    font: inherit;
+    font-weight: 500;
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.modal-actions button:hover {
+    transform: translateY(-1px);
+}
+
+.modal-actions button:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 3px;
+}
+
+/* Tombol Batal */
+#cancel-edit,
+#cancel-delete {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+#cancel-edit:hover,
+#cancel-delete:hover {
+    background: #d1d5db;
+}
+
+/* Tombol Simpan Perubahan */
+.modal-actions .edit-button {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.modal-actions .edit-button:hover {
+    background: #1d4ed8;
+}
+
+/* Tombol Hapus Transaksi */
+.modal-actions .delete-button {
+    background: #dc2626;
+    color: #ffffff;
+}
+
+.modal-actions .delete-button:hover {
+    background: #b91c1c;
+}
+
+/* ========================================
+   RESPONSIVE MOBILE
+======================================== */
+
+@media (max-width: 360px) {
+    .modal {
+        padding: 12px;
     }
 
-    .transaction-item {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 8px;
-        padding: 16px;
+    .modal-content {
+        padding: 20px;
     }
+
+    .modal-content h2 {
+        font-size: 20px;
+    }
+
+    .modal-actions {
+        gap: 8px;
+    }
+
+    .modal-actions button {
+        padding: 10px 12px;
+    }
+    .summary-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-card:first-child {
+        grid-column: auto;
+    }
+
+    .navbar-menu {
+        gap: 12px;
+    }
+}
+
+.transaction-actions button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.transaction-actions .edit-button {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.transaction-actions .edit-button:hover {
+    background-color: #1d4ed8;
+}
+
+.transaction-actions .delete-button {
+    background-color: #dc2626;
+    color: #ffffff;
+}
+
+.transaction-actions .delete-button:hover {
+    background-color: #b91c1c;
 }

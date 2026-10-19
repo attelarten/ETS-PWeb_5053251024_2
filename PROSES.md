@@ -4,12 +4,13 @@ Struktur data transaksi:
 {
   nama: "Servis Motor"
   tanggal: "2026-10-12",
-  jenis: "pengeluaran",
-  kategori: "operasional",
+  type: "pengeluaran",
   nominal: 200000,
 }
 
 Keputusan desain yang dibuat:
 
-Perlu kategori transaksi untuk membagi pengeluaran operasional dan pribadi
+Perlu type pengeluaran jadi dua menjadi pengeluaran operasional dan pribadi
+
+Saat pengerjaan terdapat 2 bug, yang pertama adalah di daftar transaksi, dan penyelesaiannya adalah di script js, penggunaan nama dari AI berbeda dengan code.
 
