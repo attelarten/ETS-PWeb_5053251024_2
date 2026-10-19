@@ -366,21 +366,6 @@ function formatRupiah(amount) {
     });
 }
 
-const searchTransaction = document.getElementById("searchTransaction");
-
-searchTransaction.addEventListener("input", function () {
-    const keyword = searchTransaction.value
-        .trim()
-        .toLowerCase();
-
-    const filteredTransactions = transactions.filter(function (transaction) {
-        return transaction.nama
-            .toLowerCase()
-            .includes(keyword);
-    });
-
-    renderTransactions(filteredTransactions);
-});
 
 renderTransactions();
 updateDashboardBalance();
